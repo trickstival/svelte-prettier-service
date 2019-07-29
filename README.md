@@ -1,6 +1,6 @@
 # Svelte Prettier Service
 
-This repository is used by (vue2svelte)[https://github.com/trickstival/vue2svelte] to show
+This repository is used by [vue2svelte](https://github.com/trickstival/vue2svelte) to show
 prettyfied svelte code.
 
 It expects a POST request in this address: https://us-central1-svelte-prettier.cloudfunctions.net/prettify
