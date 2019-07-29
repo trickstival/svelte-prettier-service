@@ -6,7 +6,8 @@
   "author": "trickstival",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon src/"
+    "dev": "nodemon src/",
+    "start": "node src/index"
   },
   "dependencies": {
     "@hapi/joi": "^15.1.0",
