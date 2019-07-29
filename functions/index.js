@@ -1,12 +1,12 @@
 const prettier = require('prettier')
-const express = require('express')
 const prettierSvelte = require('prettier-plugin-svelte')
+const functions = require('firebase-functions')
 const { RequestValidator } = require('./validator')
 
-const app = express()
-app.use(express.json())
+const admin = require('firebase-admin')
+admin.initializeApp()
 
-export default (payload) => {
+const handleCode = (payload) => {
     RequestValidator.prettier(payload)
     const {
         code,
@@ -21,4 +21,8 @@ export default (payload) => {
     })
     return { formattedCode }
 }
+
+exports.prettify = functions.https.onRequest((req, res) => {
+    res.json(handleCode(req.body))
+})
 

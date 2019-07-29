@@ -3,7 +3,7 @@
 This repository is used by (vue2svelte)[https://github.com/trickstival/vue2svelte] to show
 prettyfied svelte code.
 
-It expects a POST request in this address: https://fast-wildwood-44673.herokuapp.com:8080
+It expects a POST request in this address: https://us-central1-svelte-prettier.cloudfunctions.net/prettify
 with this body:
 
 ```json
@@ -15,5 +15,7 @@ with this body:
 The response looks like this:
 
 ```json
-
+{
+    "formattedCode": "[some svelte code];\n"
+}
 ```
