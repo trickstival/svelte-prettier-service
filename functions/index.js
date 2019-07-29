@@ -6,12 +6,12 @@ const { RequestValidator } = require('./validator')
 const app = express()
 app.use(express.json())
 
-app.post('/prettier', (req, res) => {
-    RequestValidator.prettier(req.body)
+export default (payload) => {
+    RequestValidator.prettier(payload)
     const {
         code,
         options
-    } = req.body
+    } = payload
 
     const formattedCode = prettier.format(code, {
         plugins: [
@@ -19,11 +19,6 @@ app.post('/prettier', (req, res) => {
         ],
         ...options
     })
-    res.json({ formattedCode })
-})
+    return { formattedCode }
+}
 
-const port = 8080
-
-app.listen(process.env.PORT || port, () => {
-    console.log(`Prettier service started on port ${port}`)
-})
