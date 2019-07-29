@@ -22,7 +22,7 @@ app.post('/prettier', (req, res) => {
     res.json({ formattedCode })
 })
 
-const port = 8376
+const port = 80
 
 app.listen(port, () => {
     console.log(`Prettier service started on port ${port}`)
