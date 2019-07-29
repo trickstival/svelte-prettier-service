@@ -24,6 +24,6 @@ app.post('/prettier', (req, res) => {
 
 const port = 8080
 
-app.listen(port, () => {
+app.listen(proess.env.PORT || port, () => {
     console.log(`Prettier service started on port ${port}`)
 })
